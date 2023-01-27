@@ -24,7 +24,8 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  // .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+    .connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.bxywgdv.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
